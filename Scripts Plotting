@@ -1,3 +1,4 @@
+# Trial 1
 
 import matplotlib.pyplot as plt; plt.rcdefaults()
 import numpy as np
@@ -21,3 +22,56 @@ plt.plot(a, x + 3, '-r');  # dotted red
 
 plt.xticks(range(12), ['Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul','Aug','Sep','Oct'])
 plt.show()
+
+# Trial 2
+
+import pandas as pd
+import numpy as np
+import matplotlib.pylab as plt
+from matplotlib.pylab import rcParams
+data = pd.read_csv('C:/Users/Chetan/Desktop/Data1.csv')
+
+dateparse = lambda dates: pd.datetime.strptime(dates, '%Y-%m')
+data = pd.read_csv('C:/Users/Chetan/Desktop/Data1.csv', parse_dates=['Month'], index_col='Month',date_parser=dateparse)
+ts = data['Rain']
+plt.plot(ts)
+
+# Trial 3
+
+import pandas as pd
+import numpy as np
+import matplotlib.pylab as plt
+from matplotlib.pylab import rcParams
+data = pd.read_csv('C:/Users/Chetan/Desktop/Data1.csv')
+
+dateparse = lambda dates: pd.datetime.strptime(dates, '%Y-%m')
+data = pd.read_csv('C:/Users/Chetan/Desktop/Data1.csv', parse_dates=['Month'], index_col='Month',date_parser=dateparse)
+ts = data['Rain']
+plt.plot(ts)
+
+import matplotlib.pyplot as plt; plt.rcdefaults()
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+from matplotlib import rcParams
+rcParams['font.family'] = 'Times New Roman'
+
+# Trial 4
+
+p = pd.read_excel('C:/Users/Chetan/Desktop/Data1.csv')
+p.head()
+x = p.iloc[:,1].values
+print(x)
+y = p.iloc[:,2].values
+z = p.iloc[:,3].values
+a = p.iloc[:,4].values
+
+plt.plot(x, '-g')  # solid green
+plt.plot(y, '-c') # dashed cyan
+plt.plot(z, x + 2, '-k') # dashdot black
+plt.plot(a, x + 3, '-r');  # dotted red
+
+plt.xticks(range(12), ['Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul','Aug','Sep','Oct'])
+plt.show()
+
+
